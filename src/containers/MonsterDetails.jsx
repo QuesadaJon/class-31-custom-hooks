@@ -26,10 +26,4 @@ export default function MonsterDetails() {
       <Link to="/">List Page</Link>
     </div>
   );
-};
-
-MonsterDetails.propTypes = {
-  match: PropTypes.shape({
-    params: 
-  })
 }
