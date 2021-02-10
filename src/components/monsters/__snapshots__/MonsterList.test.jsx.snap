@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MonsterList component matches a snapshot 1`] = `
+<DocumentFragment>
+  <ul
+    data-testid="monsters"
+  >
+    <li>
+      <a
+        href="/monster/name"
+      >
+        <figure>
+          <p>
+            name
+          </p>
+          <img
+            alt="name"
+            src="https://image.com"
+          />
+        </figure>
+      </a>
+    </li>
+    <li>
+      <a
+        href="/monster/bob"
+      >
+        <figure>
+          <p>
+            bob
+          </p>
+          <img
+            alt="bob"
+            src="https://image.com"
+          />
+        </figure>
+      </a>
+    </li>
+    <li>
+      <a
+        href="/monster/sarah"
+      >
+        <figure>
+          <p>
+            sarah
+          </p>
+          <img
+            alt="sarah"
+            src="https://image.com"
+          />
+        </figure>
+      </a>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
