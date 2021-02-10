@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Monster component matches a snapshot 1`] = `
+<DocumentFragment>
+  <figure>
+    <p>
+      Fredrick
+    </p>
+    <img
+      alt="Fredrick"
+      src="http//image.com"
+    />
+  </figure>
+</DocumentFragment>
+`;
