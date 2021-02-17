@@ -1,19 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import MonsterList from '../components/monsters/MonsterList';
-import { getMonsters } from '../services/xfilesApi';
+import { useMonsters } from '../hooks/monsters';
 
 const MonsterPage = () => {
-  const [loading, setLoading] = useState(true);
-  const [monsters, setMonsters] = useState([]);
+  const { loading, monsters } = useMonsters();
+  // const [loading, setLoading] = useState(true);
+  // const [monsters, setMonsters] = useState([]);
 
-  useEffect(() => {
-    getMonsters().then((monsters) => {
-      setMonsters(monsters);
-      setLoading(false);
-    });
-  }, []);
+  // useEffect(() => {
+  //   getMonsters()
+  //     .then((monsters) => {
+  //       setMonsters(monsters);
+  //       setLoading(false);
+  //     })
+  //     .catch(err => console.log(err));
+  // }, []);
 
-  if(loading) return <h1>Loading...</h1>;
+  if(loading) return <h1 data-testid="monsters" >Loading...</h1>;
   return <MonsterList monsters={monsters} />;
 };
 
