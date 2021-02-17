@@ -13,10 +13,10 @@ describe('MonsterPage container', () => {
 
     screen.getByText('Loading...');
 
-    const ul = await screen.findByTestId('monsters');
+    const h1 = await screen.findByTestId('monsters');
 
     return waitFor(() => {
-      expect(ul).not.toBeEmptyDOMElement();
+      expect(h1).not.toBeEmptyDOMElement();
     });
   });
 });

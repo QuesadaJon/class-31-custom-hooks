@@ -1,29 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
-import { getMonsterByName } from '../services/xfilesApi';
+import React from 'react';
+import { useMonsterDetails } from '../hooks/monsterDetails';
 
 export default function MonsterDetails() {
-  const [monster, setMonster] = useState({});
-  const { name } = useParams();
+  const { loading, monster } = useMonsterDetails();
 
-  useEffect(() => {
-    getMonsterByName(name)
-      .then((monster) => setMonster(monster));
-  }, []);
-
-  const { image, description, categories, gender } = monster;
-
+  if(loading) return <h1>Loading...</h1>;
   return (
-    <div>
+    <div data-testid="monster-details">
       <h1>{name}</h1>
-      <img src={image}/>
+      <img src={monster[0].image} alt={name} />
       <figcaption>
-        <p>{description}</p>
-        <p>{categories}</p>
-        <p>{gender}</p>
+        <p>description:{monster[0].description}</p>
+        <p>gender:{monster[0].gender}</p>
       </figcaption>
-      <Link to="/">List Page</Link>
     </div>
   );
 }
